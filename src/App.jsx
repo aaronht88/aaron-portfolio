@@ -32,7 +32,7 @@ const App = () => {
   // Data: YouTube Videos
   const youtubeVideos = {
     script: [
-      { id: 'CoYF0kTI7t8', title: 'USB-C 線材選購指南：2025 新制式全解析', views: '35K views' },
+      { id: 'CoYF0kTI7t8', title: 'USB-C 線材選購指南：2025 新制式全解析', views: '282K views' },
       { id: '-GUynsq2Ps0', title: '2024 平板電腦選購攻略：iPad 以外的頂級選擇', views: '150K views' },
       { id: 'SxYtyf2lbUM', title: '2024 平價智能手錶實測：$500 價位挑戰 Apple Watch', views: '230K views' },
       { id: 'mOOkUhwlq-Q', title: 'AI 工具 10 分鐘速成：一鍵整理文章、Excel 教學', views: '204K views' },
