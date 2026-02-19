@@ -20,7 +20,8 @@ import {
   Mic,
   XCircle,
   Eye,
-  Star
+  Star,
+  Briefcase
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -32,15 +33,15 @@ const Portfolio = () => {
   // Data: YouTube Videos with Verified Views
   const youtubeVideos = {
     script: [
-      { id: 'CoYF0kTI7t8', title: 'USB-C 線材選購指南：2025 又轉新制式！全解析', views: '35K views' },
-      { id: '-GUynsq2Ps0', title: '2024 平板電腦選購攻略：iPad 以外的頂級選擇', views: '185K views' },
+      { id: 'CoYF0kTI7t8', title: 'USB-C 線材選購指南：2025 又轉新制式！全解析', views: '282K views' },
+      { id: '-GUynsq2Ps0', title: '2024 平板電腦選購攻略：iPad 以外的頂級選擇', views: '243K views' },
       { id: 'SxYtyf2lbUM', title: '2024 平價智能手錶實測：$500 價位挑戰 Apple Watch', views: '230K views' },
-      { id: 'mOOkUhwlq-Q', title: 'AI 工具 10 分鐘速成：一鍵整理文章、Excel 教學', views: '204K views' },
+      { id: 'mOOkUhwlq-Q', title: 'AI 工具 10 分鐘速成：一鍵整理文章、Excel 教學', views: '205K views' },
     ],
     host: [
-      { id: 'TipaTPc803U', title: '旗艦手機拍攝對決 (Hosting Highlight)', views: '85K views' },
-      { id: '7EydhuA8gUE', title: '智能家居入門指南 (Hosting Highlight)', views: '62K views' },
-      { id: 'D6-lGXOqpyM', title: '降噪耳機年度評測 (Hosting Highlight)', views: '95K views' },
+      { id: 'TipaTPc803U', title: 'iPhone 17 最抵買機攻略、即賺＄3000？真。用家必讀｜上台 / 信用卡 / 電器連鎖店優惠全對比，教你最抵方法入手！', views: '284K views' },
+      { id: '7EydhuA8gUE', title: '$1,500 手掌大小迷你 PC！GTBox Mini 實機評測！文書／播片完全勝任、還能 60fps 運行遊戲大作？客廳副機最划算選擇？', views: '254K views' },
+      { id: 'D6-lGXOqpyM', title: '先達「死場」等 iPhone 17 打救！？從炒賣聖地到呎價暴跌 95%！30 年沉浮、商戶靠維修 / 二手機掙扎求生紀實專題報導', views: '228K views' },
       { id: '-Hi7Wt10eqM', title: 'Apple Intelligence 終於有廣東話！實測iPhone 8大必用新功能', views: '168K views' },
     ]
   };
@@ -67,7 +68,8 @@ const Portfolio = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'portfolio', 'experience', 'skills', 'contact'];
+      // Updated section order for scroll spy
+      const sections = ['home', 'about', 'experience', 'portfolio', 'skills', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -92,7 +94,6 @@ const Portfolio = () => {
   };
 
   return (
-    // Updated background to Deep Blue (slate-950/custom) and text colors
     <div className="min-h-screen bg-[#050B14] text-slate-200 font-sans selection:bg-amber-500 selection:text-white">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#050B14]/95 backdrop-blur-sm shadow-lg border-b border-white/10' : 'bg-transparent'}`}>
@@ -102,9 +103,9 @@ const Portfolio = () => {
               AC<span className="text-white">.</span>
             </div>
 
-            {/* Desktop Menu */}
+            {/* Desktop Menu - Updated Order */}
             <div className="hidden md:flex space-x-8 text-sm font-medium">
-              {['Home', 'About', 'Portfolio', 'Experience', 'Skills', 'Contact'].map((item) => (
+              {['Home', 'About', 'Experience', 'Portfolio', 'Skills', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -124,11 +125,11 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu Dropdown - Updated Order */}
         {isMenuOpen && (
           <div className="md:hidden bg-[#0A1625] border-t border-white/10 absolute w-full shadow-2xl">
             <div className="px-6 py-4 space-y-4 flex flex-col">
-              {['Home', 'About', 'Portfolio', 'Experience', 'Skills', 'Contact'].map((item) => (
+              {['Home', 'About', 'Experience', 'Portfolio', 'Skills', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -144,14 +145,12 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        {/* Updated Background Elements - Gold & Blue glows */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse delay-1000"></div>
 
         <div className="max-w-7xl mx-auto px-6 z-10 w-full">
           <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
             
-            {/* Text Content */}
             <div className="flex-1 text-center md:text-left">
               <div className="inline-block px-4 py-1.5 mb-6 border border-amber-500/30 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium tracking-wide">
                 <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div> Available for Opportunities</span>
@@ -178,7 +177,6 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Profile Image - Updated with user provided URL */}
             <div className="flex-1 flex justify-center">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <div className="absolute inset-0 rounded-full border-2 border-amber-500/20"></div>
@@ -249,7 +247,119 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* PORTFOLIO SECTION */}
+      {/* Experience Section - MOVED UP */}
+      <section id="experience" className="py-24 bg-[#08101C]">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+            <Award className="text-amber-400" /> Professional Experience
+          </h2>
+
+          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+            
+            {/* Job 1: Price.com.hk */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] group-[.is-active]:border-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                  <h3 className="font-bold text-xl text-white">Senior Editor</h3>
+                  <span className="text-amber-400 text-sm font-medium px-2 py-1 bg-amber-500/10 rounded border border-amber-500/20">Feb 2024 – Present</span>
+                </div>
+                <h4 className="text-slate-300 font-medium mb-4">Price.com.hk Limited</h4>
+                <ul className="space-y-2 text-slate-400 text-sm list-disc list-outside pl-4">
+                  <li>Produced engaging video content including scriptwriting, filming direction, and post-production editing.</li>
+                  <li>Managed social media channels (Facebook, Instagram, YouTube) creating and scheduling content.</li>
+                  <li>Leveraged AI tools (ChatGPT, Claude) to streamline content creation workflow.</li>
+                  <li>Analyzed content performance metrics and social media analytics.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Job 2: HK01 */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] group-[.is-active]:border-amber-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="w-3 h-3 bg-slate-500 rounded-full group-hover:bg-amber-400 transition-colors"></div>
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                  <h3 className="font-bold text-xl text-white">Senior Reporter</h3>
+                  <span className="text-slate-400 text-sm font-medium px-2 py-1 bg-white/5 rounded">Aug 2017 – Feb 2024</span>
+                </div>
+                <h4 className="text-slate-300 font-medium mb-4">HK01 Company Limited</h4>
+                <ul className="space-y-2 text-slate-400 text-sm list-disc list-outside pl-4">
+                  <li>Published web and live news articles across multiple digital platforms.</li>
+                  <li>Managed and grew social media presence for Facebook, Instagram, and YouTube.</li>
+                  <li>Utilized AI-powered tools for content research and editorial assistance.</li>
+                  <li>Developed content partnerships with clients and brands.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Job 3: Famous Technology Limited (New) */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] group-[.is-active]:border-amber-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="w-3 h-3 bg-slate-500 rounded-full group-hover:bg-amber-400 transition-colors"></div>
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                  <h3 className="font-bold text-xl text-white">Senior Editor</h3>
+                  <span className="text-slate-400 text-sm font-medium px-2 py-1 bg-white/5 rounded">Apr 2016 – Jul 2017</span>
+                </div>
+                <h4 className="text-slate-300 font-medium mb-4">Famous Technology Limited</h4>
+                <ul className="space-y-2 text-slate-400 text-sm list-disc list-outside pl-4">
+                  <li>Published web and live news articles with focus on technology sector.</li>
+                  <li>Managed social media accounts and grew audience engagement.</li>
+                  <li>Hosted live programs and industry events.</li>
+                  <li>Arranged campaigns with major brands and PR agencies.</li>
+                </ul>
+              </div>
+            </div>
+
+             {/* Job 4: Phonet Media Limited (New) */}
+             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] group-[.is-active]:border-amber-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="w-3 h-3 bg-slate-500 rounded-full group-hover:bg-amber-400 transition-colors"></div>
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
+                  <h3 className="font-bold text-xl text-white">Senior Online Editor</h3>
+                  <span className="text-slate-400 text-sm font-medium px-2 py-1 bg-white/5 rounded">Nov 2011 – Jul 2017</span>
+                </div>
+                <h4 className="text-slate-300 font-medium mb-4">Phonet Media Limited</h4>
+                <ul className="space-y-2 text-slate-400 text-sm list-disc list-outside pl-4">
+                  <li>Published web and live news articles on mobile technology.</li>
+                  <li>Managed social media content strategy and editorial workflow.</li>
+                  <li>Created and scheduled social media posts to drive traffic and engagement.</li>
+                  <li>Communicated with writers and coordinated social media campaigns.</li>
+                  <li>Conducted product reviews and photographed products.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <Briefcase size={18} className="text-slate-400 group-hover:text-amber-400 transition-colors" />
+              </div>
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
+                <h3 className="font-bold text-lg text-white mb-2">Education</h3>
+                <div className="mb-4">
+                  <p className="text-amber-400 font-medium">Metropolitan University (2010)</p>
+                  <p className="text-slate-400 text-sm">Bachelor's Degree in Multimedia and Entertainment Technology</p>
+                </div>
+                <div>
+                  <p className="text-amber-400 font-medium">IVE (2007)</p>
+                  <p className="text-slate-400 text-sm">Higher Diploma in Multimedia Technology and Digital Entertainment</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO SECTION - MOVED DOWN */}
       <section id="portfolio" className="py-24 bg-[#050B14]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -354,77 +464,6 @@ const Portfolio = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-24 bg-[#08101C]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
-            <Award className="text-amber-400" /> Professional Experience
-          </h2>
-
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
-            
-            {/* Job 1 */}
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] group-[.is-active]:border-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
-                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
-                  <h3 className="font-bold text-xl text-white">Senior Editor</h3>
-                  <span className="text-amber-400 text-sm font-medium px-2 py-1 bg-amber-500/10 rounded border border-amber-500/20">Feb 2024 – Present</span>
-                </div>
-                <h4 className="text-slate-300 font-medium mb-4">Price.com.hk Limited</h4>
-                <ul className="space-y-2 text-slate-400 text-sm list-disc list-outside pl-4">
-                  <li>Produced engaging video content including scriptwriting, filming direction, and post-production editing.</li>
-                  <li>Managed social media channels (FB, IG, YT) creating and scheduling content.</li>
-                  <li>Leveraged AI tools (ChatGPT, Claude) to streamline content creation workflow.</li>
-                  <li>Analyzed content performance metrics and social media analytics.</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Job 2 */}
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] group-[.is-active]:border-amber-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                <div className="w-3 h-3 bg-slate-500 rounded-full group-hover:bg-amber-400 transition-colors"></div>
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
-                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
-                  <h3 className="font-bold text-xl text-white">Senior Reporter</h3>
-                  <span className="text-slate-400 text-sm font-medium px-2 py-1 bg-white/5 rounded">Aug 2017 – Feb 2024</span>
-                </div>
-                <h4 className="text-slate-300 font-medium mb-4">HK01 Company Limited</h4>
-                <ul className="space-y-2 text-slate-400 text-sm list-disc list-outside pl-4">
-                  <li>Published web and live news articles across multiple digital platforms.</li>
-                  <li>Managed and grew social media presence for Facebook, Instagram, and YouTube.</li>
-                  <li>Utilized AI-powered tools for content research and editorial assistance.</li>
-                  <li>Developed content partnerships with clients and brands.</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Education */}
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[#0A1625] bg-[#0F1C2E] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                <Award size={18} className="text-slate-400 group-hover:text-amber-400 transition-colors" />
-              </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#0F1C2E] p-6 rounded-xl border border-white/5 shadow-lg hover:border-amber-500/30 transition-all">
-                <h3 className="font-bold text-lg text-white mb-2">Education</h3>
-                <div className="mb-4">
-                  <p className="text-amber-400 font-medium">Metropolitan University (2010)</p>
-                  <p className="text-slate-400 text-sm">Bachelor's Degree in Multimedia and Entertainment Technology</p>
-                </div>
-                <div>
-                  <p className="text-amber-400 font-medium">IVE (2007)</p>
-                  <p className="text-slate-400 text-sm">Higher Diploma in Multimedia Technology and Digital Entertainment</p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
