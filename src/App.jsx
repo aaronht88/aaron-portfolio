@@ -169,7 +169,7 @@ const App = () => {
                 <div className="absolute inset-0 rounded-full border-2 border-amber-500/20"></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-amber-500/20">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                    src="https://github.com/aaronht88/aaron-portfolio/blob/main/Profile_hero.jpg?q=80&w=1000&auto=format&fit=crop" 
                     alt="Aaron Choi" 
                     className="w-full h-full object-cover"
                   />
