@@ -164,16 +164,16 @@ const App = () => {
               </div>
             </div>
 
-            <div className="flex-1 flex justify-center">
-              <div className="relative w-64 h-64 md:w-80 md:h-80">
-                <div className="absolute inset-0 rounded-full border-2 border-amber-500/20"></div>
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-amber-500/20">
-                  <img 
-                    src="https://github.com/aaronht88/aaron-portfolio/blob/main/Profile_hero.jpg?q=80&w=1000&auto=format&fit=crop" 
-                    alt="Aaron Choi" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+           <div className="flex-1 flex justify-center">
+  <div className="relative w-64 h-64 md:w-80 md:h-80">
+    <div className="absolute inset-0 rounded-full border-2 border-amber-500/20"></div>
+    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-amber-500/20">
+      <img 
+        src="https://raw.githubusercontent.com/aaronht88/aaron-portfolio/main/Profile_hero.jpg" 
+        alt="Aaron Choi" 
+        className="w-full h-full object-cover"
+      />
+    </div>
               </div>
             </div>
           </div>
